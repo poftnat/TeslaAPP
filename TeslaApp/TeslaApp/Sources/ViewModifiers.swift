@@ -38,7 +38,7 @@ struct CircleButtonModifier: ViewModifier {
         content
             .font(.system(size: 20))
             .foregroundStyle(.icon)
-            .padding(.all, 20)
+            .frame(width: 50, height: 50)
             .background(
                 ZStack {
                     RadialGradient(colors: [.lightShadow, .darkShadow.opacity(0.45)], center: .topLeading, startRadius: 0, endRadius: 80)
@@ -50,9 +50,7 @@ struct CircleButtonModifier: ViewModifier {
                         .stroke(style: StrokeStyle(lineWidth: 4))
                         .fill(LinearGradient(colors: [.darkShadow.opacity(0.45), .lightShadow], startPoint: .top, endPoint: .bottomTrailing))
                 }
+                    .clipShape(Circle())
             )
-    .clipShape(Circle())
-    .frame(width: 44, height: 44)
-    .neumorfismNonSelectedStyle()
     }
 }

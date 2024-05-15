@@ -14,6 +14,13 @@
 		4F85C7B32BF35599004A7287 /* UnlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7B22BF35599004A7287 /* UnlockView.swift */; };
 		4F85C7B52BF378B4004A7287 /* Extension+View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7B42BF378B3004A7287 /* Extension+View.swift */; };
 		4F85C7B72BF37994004A7287 /* ViewModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7B62BF37994004A7287 /* ViewModifiers.swift */; };
+		4F85C7BA2BF38CDE004A7287 /* Extension+LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */; };
+		4FE7CE882BF3BAFA00A74D93 /* ClimateSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */; };
+		4FE7CE8B2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */; };
+		4FE7CE8D2BF3FA3A00A74D93 /* SliderThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */; };
+		4FE7CE8F2BF4019700A74D93 /* DarkSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */; };
+		4FEA2C0C2BF416C0000B5ABF /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */; };
+		4FEA2C0E2BF43D0D000B5ABF /* BottomSheetReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +32,13 @@
 		4F85C7B22BF35599004A7287 /* UnlockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnlockView.swift; sourceTree = "<group>"; };
 		4F85C7B42BF378B3004A7287 /* Extension+View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+View.swift"; sourceTree = "<group>"; };
 		4F85C7B62BF37994004A7287 /* ViewModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModifiers.swift; sourceTree = "<group>"; };
+		4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+LinearGradient.swift"; sourceTree = "<group>"; };
+		4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateSettingsView.swift; sourceTree = "<group>"; };
+		4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateSettingsViewModel.swift; sourceTree = "<group>"; };
+		4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderThumbView.swift; sourceTree = "<group>"; };
+		4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DarkSlider.swift; sourceTree = "<group>"; };
+		4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
+		4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetReusableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +74,7 @@
 				4F85C7A42BF2A94B004A7287 /* TeslaAppApp.swift */,
 				4F85C7B22BF35599004A7287 /* UnlockView.swift */,
 				4F85C7A62BF2A94B004A7287 /* MainView.swift */,
+				4FE7CE892BF3EA7800A74D93 /* ClimateSettingsModule */,
 				4F85C7B82BF37A01004A7287 /* Sources */,
 				4F85C7AA2BF2A94E004A7287 /* Preview Content */,
 			);
@@ -78,10 +93,24 @@
 			isa = PBXGroup;
 			children = (
 				4F85C7B42BF378B3004A7287 /* Extension+View.swift */,
+				4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */,
+				4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */,
 				4F85C7B62BF37994004A7287 /* ViewModifiers.swift */,
 				4F85C7A82BF2A94E004A7287 /* Assets.xcassets */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		4FE7CE892BF3EA7800A74D93 /* ClimateSettingsModule */ = {
+			isa = PBXGroup;
+			children = (
+				4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */,
+				4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */,
+				4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */,
+				4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */,
+				4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */,
+			);
+			path = ClimateSettingsModule;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,11 +183,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FEA2C0E2BF43D0D000B5ABF /* BottomSheetReusableView.swift in Sources */,
 				4F85C7B72BF37994004A7287 /* ViewModifiers.swift in Sources */,
 				4F85C7A72BF2A94B004A7287 /* MainView.swift in Sources */,
+				4FEA2C0C2BF416C0000B5ABF /* CircleProgressView.swift in Sources */,
 				4F85C7A52BF2A94B004A7287 /* TeslaAppApp.swift in Sources */,
 				4F85C7B52BF378B4004A7287 /* Extension+View.swift in Sources */,
+				4F85C7BA2BF38CDE004A7287 /* Extension+LinearGradient.swift in Sources */,
+				4FE7CE8B2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift in Sources */,
+				4FE7CE8F2BF4019700A74D93 /* DarkSlider.swift in Sources */,
 				4F85C7B32BF35599004A7287 /* UnlockView.swift in Sources */,
+				4FE7CE8D2BF3FA3A00A74D93 /* SliderThumbView.swift in Sources */,
+				4FE7CE882BF3BAFA00A74D93 /* ClimateSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

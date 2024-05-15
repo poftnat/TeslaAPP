@@ -9,24 +9,32 @@ import SwiftUI
 
 struct UnlockView: View {
     
-    @State var isCarClosed = false
-    @State var isOnSettingsButtonTap = false
+    @State var isCarClosed = true
     
     var body: some View {
         NavigationView {
             backgroundStackView {
-                VStack {
-                    NavigationLink(destination: MainView()) {
-                        Image(systemName: "gearshape")
-                            .regularCircleBackground()
-                            .position(x: UIScreen.main.bounds.width - 60, y: 60)
+                ZStack {
+                    foregroundGradient
+                        .ignoresSafeArea()
+                        .opacity(isCarClosed ? 1 : 0)
+                        carImageView
+                        .offset(x: 5)
+                    VStack {
+                        NavigationLink(destination: MainView()) {
+                            HStack {
+                                Spacer()
+                                settingsButton
+                                    .zIndex(1)
+                            }
+                        }
+                        Spacer()
+                        lockCarView
+                            .zIndex(1)
+                            .padding(.bottom, 30)
                     }
-                    Spacer()
-                    lockCarView
-                    Spacer()
-
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
     }
@@ -42,11 +50,22 @@ struct UnlockView: View {
                         .padding(.leading, 10)
                         .foregroundStyle(.white)
                     Spacer()
-                    Image(systemName: isCarClosed ? "lock.open.fill" : "lock.fill")
-                        .foregroundStyle(gradient)
-                        .padding(.trailing, 10)
+                    Image(systemName: isCarClosed ? "lock.fill" : "lock.open.fill")
+                        .foregroundStyle(LinearGradient.accentGradient)
+                        .font(.system(size: 20))
+                        .foregroundStyle(.icon)
+                        .padding(.all, 12)
+                        .background(
+                            ZStack {
+                                buttonBackgroundView
+                            }
+                        )
+                .clipShape(Circle())
+                .frame(width: 30, height: 30)
+                .padding(.trailing, 10)
+                .neumorfismNonSelectedStyle()
                 }
-                .frame(width: 120, height: 50)
+                .frame(width: 160, height: 55)
                 .padding(.all, 10)
                 .background(
                     ZStack {
@@ -63,18 +82,62 @@ struct UnlockView: View {
             .frame(width: 300)
     }
     
-    var gradient: LinearGradient {
-        LinearGradient(colors: [.gradientTop, .gradientBottom], startPoint: .top, endPoint: .bottom)
+    private var carImageView: some View {
+        ZStack {
+            Image("unlocked car")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .opacity(isCarClosed ? 0 : 1)
+                .background(
+                    RadialGradient(colors: [.basic, .gradientBottom.opacity(0.4)], center: .center, startRadius: 200, endRadius: 10)
+                        .blur(radius: 20)
+                        .opacity(isCarClosed ? 0 : 1)
+                )
+            Image("locked car")
+                .resizable()
+                .offset(y: -35)
+                .aspectRatio(contentMode: .fit)
+                .opacity(isCarClosed ? 1 : 0)
+        }
+            
     }
     
-    var backgroundGradient: LinearGradient {
+    private var buttonBackgroundView: some View {
+        ZStack {
+            RadialGradient(colors: [.lightShadow, .darkShadow.opacity(0.45)], center: .topLeading, startRadius: 0, endRadius: 80)
+            Circle()
+                .fill(LinearGradient(colors: [.lightShadow, .darkShadow.opacity(0.45)], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .padding(2)
+                .blur(radius: 8)
+            Circle()
+                .stroke(style: StrokeStyle(lineWidth: 4))
+                .fill(LinearGradient(colors: [.darkShadow.opacity(0.45), .lightShadow], startPoint: .top, endPoint: .bottomTrailing))
+                .blur(radius: 1)
+            Circle()
+                .stroke(style: StrokeStyle(lineWidth: 1))
+                .fill(.darkShadow)
+        }
+    }
+    
+    private var settingsButton: some View {
+        Image(systemName: "gearshape")
+            .regularCircleBackground()
+            .padding(.top, 10)
+            .padding(.horizontal, 20)
+    }
+    
+    private var backgroundGradient: LinearGradient {
         LinearGradient(colors: [.black, .darkShadow, .lightShadow, .darkShadow, .black], startPoint: .top, endPoint: .bottom)
+    }
+    
+    private var foregroundGradient: LinearGradient {
+        LinearGradient(stops: [.init(color: .lightShadow.opacity(0.6), location: 0), .init(color: .darkShadow, location: 0.2), .init(color: .darkShadow, location: 0.7), .init(color: .lightShadow.opacity(0.4), location: 1)], startPoint: .top, endPoint: .bottom)
     }
     
     func backgroundStackView<Content: View>(content: () -> Content ) -> some View {
         ZStack {
             Rectangle()
-                .fill(LinearGradient(colors: [.white.opacity(0.3), .basic, .basic], startPoint: .top, endPoint: .bottom))
+                .fill(LinearGradient(colors: [.lightShadow, .basic, .basic], startPoint: .top, endPoint: .bottom))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea(.all)
             content()

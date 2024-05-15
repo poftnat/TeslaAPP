@@ -51,15 +51,22 @@ struct MainView: View {
                         tagSelected = index
                     }
                 }, label: {
-                    Image("\(index)")
-                        .resizable()
-                        .frame(width: 20, height: 20)
-                        .padding()
-                        .overlay(
-                            Circle()
-                                .stroke(gradient, lineWidth: 2)
-                                .opacity(tagSelected == index ? 1 : 0)
-                        )
+                    if index == 2 {
+                        NavigationLink(destination: ClimateSettingsView()) {
+                            createPanelButton(index: index, tagSelected: $tagSelected)
+                        }
+                    } else {
+                        createPanelButton(index: index, tagSelected: $tagSelected)
+                    }
+//                    Image("\(index)")
+//                        .resizable()
+//                        .frame(width: 20, height: 20)
+//                        .padding()
+//                        .overlay(
+//                            Circle()
+//                                .stroke(gradient, lineWidth: 2)
+//                                .opacity(tagSelected == index ? 1 : 0)
+//                        )
                 })
                 
             }
@@ -67,6 +74,18 @@ struct MainView: View {
         .padding()
         .background(RoundedRectangle(cornerRadius: 50).fill(.basic))
         .neumorfismNonSelectedStyle()
+    }
+    
+    private func createPanelButton(index: Int, tagSelected: Binding<Int>) -> some View {
+        Image("\(index)")
+            .resizable()
+            .frame(width: 20, height: 20)
+            .padding()
+            .overlay(
+                Circle()
+                    .stroke(gradient, lineWidth: 2)
+                    .opacity($tagSelected.wrappedValue == index ? 1 : 0)
+            )
     }
     
     var headerView: some View {

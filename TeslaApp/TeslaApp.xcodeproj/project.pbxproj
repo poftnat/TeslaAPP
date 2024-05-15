@@ -92,9 +92,8 @@
 		4F85C7B82BF37A01004A7287 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4F85C7B42BF378B3004A7287 /* Extension+View.swift */,
-				4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */,
-				4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */,
+				4FEA2C0F2BF55494000B5ABF /* ReusableViews */,
+				4FEA2C102BF554A6000B5ABF /* Extensions */,
 				4F85C7B62BF37994004A7287 /* ViewModifiers.swift */,
 				4F85C7A82BF2A94E004A7287 /* Assets.xcassets */,
 			);
@@ -106,11 +105,28 @@
 			children = (
 				4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */,
 				4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */,
+			);
+			path = ClimateSettingsModule;
+			sourceTree = "<group>";
+		};
+		4FEA2C0F2BF55494000B5ABF /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
 				4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */,
 				4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */,
 				4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */,
+				4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */,
 			);
-			path = ClimateSettingsModule;
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		4FEA2C102BF554A6000B5ABF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4F85C7B42BF378B3004A7287 /* Extension+View.swift */,
+				4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

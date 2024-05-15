@@ -181,7 +181,7 @@ struct BottomSheetReusableView<Content: View>: View {
                     onChangeMenuOffset()
                 }
                 .onEnded { _ in
-                    let maxHeight = UIScreen.main.bounds.height * 0.3
+                    let maxHeight = UIScreen.main.bounds.height * 0.25
                     withAnimation {
                         if -currentMenuOffsetY > maxHeight / 2 {
                             currentMenuOffsetY = -maxHeight

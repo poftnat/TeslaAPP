@@ -18,19 +18,23 @@ struct UnlockView: View {
                     foregroundGradient
                         .ignoresSafeArea()
                         .opacity(isCarClosed ? 1 : 0)
+                    VStack {
+                        if !isCarClosed {
+                            welcomeTitleView
+                                .transition(.opacity.combined(with: .offset(y: -20)))
+                        }
                         carImageView
-                        .offset(x: 5)
+                            .offset(x: 5, y: isCarClosed ? 40 : 0)
+                    }
                     VStack {
                         NavigationLink(destination: MainView()) {
                             HStack {
                                 Spacer()
                                 settingsButton
-                                    .zIndex(1)
                             }
                         }
                         Spacer()
                         lockCarView
-                            .zIndex(1)
                             .padding(.bottom, 30)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -82,11 +86,25 @@ struct UnlockView: View {
             .frame(width: 300)
     }
     
+    private var welcomeTitleView: some View {
+        VStack {
+            Text("Hi")
+                .font(.custom("Verdana", size: 20))
+                .foregroundStyle(.labelSecondary)
+            Spacer().frame(height: 20)
+            Text("Welcome back")
+                .font(.custom("Verdana-Bold", size: 36))
+                .foregroundStyle(.white)
+        }
+        .padding()
+    }
+    
     private var carImageView: some View {
         ZStack {
             Image("unlocked car")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
+                .offset(x: 5)
                 .opacity(isCarClosed ? 0 : 1)
                 .background(
                     RadialGradient(colors: [.basic, .gradientBottom.opacity(0.4)], center: .center, startRadius: 200, endRadius: 10)
@@ -95,11 +113,11 @@ struct UnlockView: View {
                 )
             Image("locked car")
                 .resizable()
+                .frame(width: 320, height: 240)
                 .offset(y: -35)
                 .aspectRatio(contentMode: .fit)
                 .opacity(isCarClosed ? 1 : 0)
         }
-            
     }
     
     private var buttonBackgroundView: some View {

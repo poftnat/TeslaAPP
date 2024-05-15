@@ -12,18 +12,17 @@ struct ClimateSettingsView: View {
         backgroundStackView {
             ZStack(alignment: .top)  {
                 VStack {
-                        Spacer().frame(height: 45)
-                        HStack  {
-                            backButton
-                            Spacer()
-                            settingsTitle
-                            Spacer()
-                            settingsButton
-                        }
+                    Spacer().frame(height: 45)
+                    HStack  {
+                        backButton
+                        Spacer()
+                        settingsTitle
+                        Spacer()
+                        settingsButton
+                    }
                     ScrollView {
                         Spacer().frame(height: 100)
                         progressBar
-                            .opacity(isACOn ? 0 : 1)
                         Spacer().frame(height: 50)
                         acSettingsGroup
                             .padding()
@@ -31,17 +30,17 @@ struct ClimateSettingsView: View {
                         Spacer().frame(height: 120)
                     }
                 }
-
-                    BottomSheetReusableView(content: {
-                            ClimateBottomSheetView(isACOn: $isACOn, selectedColor: $selectedColor, value: $acValue, range: 15...30)
-                    }, isOpened: $isBottomSheetOpened)
-                    .offset(y: -90)
-                }
+                
+                BottomSheetReusableView(content: {
+                    ClimateBottomSheetView(isACOn: $isACOn, selectedColor: $selectedColor, value: $acValue, range: 15...30)
+                }, isOpened: $isBottomSheetOpened)
+                .offset(y: -80)
             }
+        }
         .onAppear(perform: {
-
+            
         })
-            .navigationBarBackButtonHidden()
+        .navigationBarBackButtonHidden()
     }
     
     @Environment (\.dismiss) private var dismiss
@@ -120,10 +119,16 @@ struct ClimateSettingsView: View {
     
     private var progressBar: some View {
         ZStack {
-            CircleProgressBar(progress: $acValue, maxValue: 30, minValue: 15, startColor: .gradientTop, endColor: selectedColor)
+            CircleProgressBar(progress: $acValue, maxValue: 30, minValue: 15, color: selectedColor)
             Text("\(String(format: "%2.f", acValue))˚ C")
                 .font(.custom("Avenir-Bold", size: 26))
+                .opacity(isACOn ? 1 : 0)
         }
+        .clipShape(Circle())
+        
+        .shadow(color: isACOn ? selectedColor.opacity(0.3) : .black, radius: 60, x: 0, y: 0)
+        .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
+        .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }
     
     private func backgroundStackView<Content: View>(content: () -> Content ) -> some View {

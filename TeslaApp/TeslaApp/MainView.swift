@@ -20,6 +20,7 @@ struct MainView: View {
                     NavigationLink(destination: UnlockView()) {
                         Image(systemName: "person.fill")
                             .regularCircleBackground()
+                            .neumorfismNonSelectedStyle()
                         .padding(.trailing, 20)
                     }
                 }
@@ -33,14 +34,6 @@ struct MainView: View {
             }
         }
         .navigationBarBackButtonHidden()
-    }
-    
-    var gradient: LinearGradient {
-        LinearGradient(colors: [.gradientTop, .gradientBottom], startPoint: .top, endPoint: .bottom)
-    }
-    
-    var backgroundGradient: LinearGradient {
-        LinearGradient(colors: [.gradientTop, .gradientBottom], startPoint: .top, endPoint: .bottom)
     }
     
     var controlPanelView: some View {
@@ -58,21 +51,20 @@ struct MainView: View {
                     } else {
                         createPanelButton(index: index, tagSelected: $tagSelected)
                     }
-//                    Image("\(index)")
-//                        .resizable()
-//                        .frame(width: 20, height: 20)
-//                        .padding()
-//                        .overlay(
-//                            Circle()
-//                                .stroke(gradient, lineWidth: 2)
-//                                .opacity(tagSelected == index ? 1 : 0)
-//                        )
                 })
                 
             }
         }
         .padding()
-        .background(RoundedRectangle(cornerRadius: 50).fill(.basic))
+        .background(
+            ZStack {
+                RoundedRectangle(cornerRadius: 50).fill(.basic)
+                RoundedRectangle(cornerRadius: 50)
+                    .stroke(style: .init(lineWidth: 4))
+                    .fill(LinearGradient(colors: [.darkShadow, .lightShadow], startPoint: .top, endPoint: .bottomTrailing))
+                    .blur(radius: 6)
+            }
+        )
         .neumorfismNonSelectedStyle()
     }
     
@@ -83,7 +75,7 @@ struct MainView: View {
             .padding()
             .overlay(
                 Circle()
-                    .stroke(gradient, lineWidth: 2)
+                    .stroke(LinearGradient.accentGradient, lineWidth: 2)
                     .opacity($tagSelected.wrappedValue == index ? 1 : 0)
             )
     }
@@ -146,7 +138,15 @@ struct MainView: View {
     func backgroundStackView<Content: View>(content: () -> Content ) -> some View {
         ZStack {
             Rectangle()
-                .fill(LinearGradient(colors: [.white.opacity(0.3), .basic, .basic], startPoint: .top, endPoint: .bottom))
+                .fill(
+                    LinearGradient(stops: [.init(color: .topPageBackground, location: 0), .init(color: .darkShadow, location: 1)], startPoint: .top, endPoint: .bottom)
+                )
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .ignoresSafeArea(.all)
+            Rectangle()
+                .fill(
+                    LinearGradient(stops: [.init(color: .lightShadow.opacity(0.45), location: 0.4), .init(color: .lightShadow.opacity(0), location: 0.99)], startPoint: .topTrailing, endPoint: .bottomLeading)
+                )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .ignoresSafeArea(.all)
             content()

@@ -27,7 +27,7 @@ struct UnlockView: View {
                             .offset(x: 5, y: isCarClosed ? 40 : 0)
                     }
                     VStack {
-                        NavigationLink(destination: MainView()) {
+                        NavigationLink(destination: TeslaTabView()) {
                             HStack {
                                 Spacer()
                                 settingsButton

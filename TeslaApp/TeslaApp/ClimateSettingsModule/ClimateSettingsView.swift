@@ -20,10 +20,10 @@ struct ClimateSettingsView: View {
                         Spacer()
                         settingsButton
                     }
-                    ScrollView {
                         Spacer().frame(height: 100)
                         progressBar
                         Spacer().frame(height: 50)
+                    ScrollView {
                         acSettingsGroup
                             .padding()
                             .blur(radius: isBottomSheetOpened ? 2 : 0)
@@ -126,7 +126,7 @@ struct ClimateSettingsView: View {
         }
         .clipShape(Circle())
         
-        .shadow(color: isACOn ? selectedColor.opacity(0.3) : .black, radius: 60, x: 0, y: 0)
+        .shadow(color: isACOn ? selectedColor.opacity(0.3) : .black, radius: 40, x: 0, y: 0)
         .shadow(color: .lightShadow, radius: 8, x: -8, y: -8)
         .shadow(color: .darkShadow, radius: 8, x: 8, y: 8)
     }

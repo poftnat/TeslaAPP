@@ -10,41 +10,53 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isAnimationStarted = false
+    @State private var isAnimationLoopFinished = false
     @State private var isAnimationFinished = false
+    @State private var isTransitionAllowed = false
+    @State private var offset = 0.0
     
     var body: some View {
-        ZStack {
-            Color.black
-            foregroundGradient
-                .opacity(isAnimationFinished ? 0 : 1)
-                TeslaLogoShape()
-                    .stroke(style: .init(lineWidth: isAnimationFinished ? 10 : 3, lineJoin: .round))
-                    .fill(.white)
-                    .shadow(color: .white, radius: isAnimationFinished ? 10 : 6)
-                    .shadow(color: .white, radius: isAnimationFinished ? 10 : 6)
-                    .blur(radius: isAnimationFinished ? 3 : 0)
-                    .opacity(isAnimationStarted ? 1 : 0)
-                    .opacity(isAnimationFinished ? 0 : 1)
-        }
-        .ignoresSafeArea()
-        .onAppear {
-            animateLogo()
-        }
-        .fullScreenCover(isPresented: $isAnimationFinished, content: {
-            withAnimation {
-                UnlockView()
+        NavigationView {
+            NavigationLink(destination: UnlockView(), isActive: $isTransitionAllowed) {
+                ZStack {
+                    Color.black
+                    foregroundGradient
+                        .opacity(isAnimationStarted ? 1 : 0)
+                    if isAnimationStarted {
+                        Group {
+                            logoView
+                            coloredLogoView
+                        }
+                        .frame(width: 300, height: 570)
+                        .transition(.offset(y: -8).combined(with: .opacity))
+                    }
+                }
+                .ignoresSafeArea()
+                .onAppear {
+                    animateLogo()
+                }
             }
-        })
+        }
+        .navigationBarBackButtonHidden()
     }
     
-    private var logo: some View {
+    private var logoView: some View {
+        TeslaLogoShape()
+            .stroke(style: .init(lineWidth: 0.9, lineJoin: .round))
+            .fill(.white)
+            .shadow(color: .white, radius: isAnimationLoopFinished ? 10 : 3)
+            .shadow(color: .white, radius: isAnimationLoopFinished ? 10 : 3)
+            .blur(radius: isAnimationFinished ? 3 : 0)
+            .opacity(isAnimationLoopFinished ? 1 : 0.8)
+            .opacity(isAnimationFinished ? 0 : 1)
+    }
+    
+    private var coloredLogoView: some View {
             TeslaLogoShape()
-                .stroke(style: .init(lineWidth: isAnimationFinished ? 10 : 3, lineJoin: .round))
-                .fill(.white)
-                .shadow(color: .white, radius: isAnimationFinished ? 20 : 6)
-                .blur(radius: isAnimationFinished ? 5 : 1)
-                .opacity(isAnimationStarted ? 1 : 0.5)
+                .stroke(style: .init(lineWidth: 0.7))
+                .opacity(isAnimationStarted ? 1 : 0)
                 .opacity(isAnimationFinished ? 0 : 1)
+                .blur(radius: 3.0)
     }
     
     private var foregroundGradient: LinearGradient {
@@ -61,20 +73,31 @@ struct SplashView: View {
     }
     
     private func animateLogo() {
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { timer in
-            withAnimation(.easeIn) {
+        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: true) { timer in
+            withAnimation(.easeIn(duration: 1.2)) {
                 isAnimationStarted = true
+                isAnimationLoopFinished = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                    withAnimation(.easeIn(duration: 1.5)) {
-                        isAnimationStarted = false
+                    withAnimation(.easeIn(duration: 1)) {
+                        isAnimationLoopFinished = false
                     }
                 }
             }
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 8) {
-            withAnimation(.easeIn(duration: 3)) {
+            withAnimation(.easeIn(duration: 0.6)) {
                 isAnimationFinished = true
             }
         }
+            
+        DispatchQueue.main.asyncAfter(deadline: .now() + 9.6) {
+            withAnimation(.easeIn(duration: 1)) {
+                isTransitionAllowed = true
+            }
+        }
     }
+}
+
+#Preview {
+    SplashView()
 }

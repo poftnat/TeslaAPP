@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Логотип Tesla
 struct TeslaLogoShape: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()

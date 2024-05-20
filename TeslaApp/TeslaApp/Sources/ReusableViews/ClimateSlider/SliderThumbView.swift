@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Точка захвата для слайдера с экрана настройки климата
 struct SliderThumbView: View {
     var body: some View {
         ZStack {
@@ -27,7 +28,6 @@ struct SliderThumbView: View {
                 separatorElement
                     .offset(x: -2)
             }
-            
         }
     }
     

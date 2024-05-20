@@ -85,25 +85,4 @@ struct TeslaTabBarShape: Shape {
         path.closeSubpath()
         return path
     }
-    
-}
-
-struct TeslaTabBarShapeView: View {
-    var body: some View {
-        ZStack {
-            Image("template")
-                .resizable()
-                .scaleEffect(1.02)
-                .frame(width: .infinity, height: .infinity)
-
-            TeslaTabBarShape()
-//                .stroke(style: .init(lineWidth: 4, lineJoin: .round))
-                .fill(.yellow.opacity(0.2))
-        }
-        .frame(height: 200)
-    }
-}
-
-#Preview {
-    TeslaTabBarShapeView()
 }

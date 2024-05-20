@@ -23,6 +23,10 @@
 		4F9161AD2BF6CADE00E74C3A /* TeslaTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161AC2BF6CADE00E74C3A /* TeslaTabBarItem.swift */; };
 		4F9161AF2BF6CB0300E74C3A /* TeslaTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161AE2BF6CB0300E74C3A /* TeslaTabBar.swift */; };
 		4F9161B12BF6CD8B00E74C3A /* ChargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9161B02BF6CD8B00E74C3A /* ChargeView.swift */; };
+		4FA6EDA12BF8F5A800089332 /* ChargeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6EDA02BF8F5A800089332 /* ChargeViewModel.swift */; };
+		4FA6EDA42BFA969300089332 /* ChargeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6EDA32BFA969300089332 /* ChargeModel.swift */; };
+		4FA6EDA62BFAA3A900089332 /* BatteryShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6EDA52BFAA3A900089332 /* BatteryShape.swift */; };
+		4FA6EDA82BFAAB2300089332 /* ChargerPinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA6EDA72BFAAB2300089332 /* ChargerPinView.swift */; };
 		4FE7CE882BF3BAFA00A74D93 /* ClimateSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */; };
 		4FE7CE8B2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */; };
 		4FE7CE8D2BF3FA3A00A74D93 /* SliderThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */; };
@@ -30,6 +34,12 @@
 		4FEA2C0C2BF416C0000B5ABF /* CircleProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */; };
 		4FEA2C0E2BF43D0D000B5ABF /* BottomSheetReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */; };
 		4FEA2C122BF55F82000B5ABF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEA2C112BF55F82000B5ABF /* SplashView.swift */; };
+		4FFEDD552BFAC9C0004F092A /* ClimateBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD542BFAC9C0004F092A /* ClimateBottomSheetView.swift */; };
+		4FFEDD572BFACA4C004F092A /* ChargerMarker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD562BFACA4C004F092A /* ChargerMarker.swift */; };
+		4FFEDD592BFACA79004F092A /* RoundedTriangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD582BFACA79004F092A /* RoundedTriangle.swift */; };
+		4FFEDD5B2BFACA9C004F092A /* TriangleSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD5A2BFACA9C004F092A /* TriangleSlider.swift */; };
+		4FFEDD5D2BFACB00004F092A /* TriangleSliderThumbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD5C2BFACB00004F092A /* TriangleSliderThumbView.swift */; };
+		4FFEDD622BFACDFB004F092A /* PlaceholderPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FFEDD612BFACDFB004F092A /* PlaceholderPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +60,10 @@
 		4F9161AC2BF6CADE00E74C3A /* TeslaTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaTabBarItem.swift; sourceTree = "<group>"; };
 		4F9161AE2BF6CB0300E74C3A /* TeslaTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaTabBar.swift; sourceTree = "<group>"; };
 		4F9161B02BF6CD8B00E74C3A /* ChargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeView.swift; sourceTree = "<group>"; };
+		4FA6EDA02BF8F5A800089332 /* ChargeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeViewModel.swift; sourceTree = "<group>"; };
+		4FA6EDA32BFA969300089332 /* ChargeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeModel.swift; sourceTree = "<group>"; };
+		4FA6EDA52BFAA3A900089332 /* BatteryShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryShape.swift; sourceTree = "<group>"; };
+		4FA6EDA72BFAAB2300089332 /* ChargerPinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerPinView.swift; sourceTree = "<group>"; };
 		4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateSettingsView.swift; sourceTree = "<group>"; };
 		4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateSettingsViewModel.swift; sourceTree = "<group>"; };
 		4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderThumbView.swift; sourceTree = "<group>"; };
@@ -57,6 +71,12 @@
 		4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleProgressView.swift; sourceTree = "<group>"; };
 		4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetReusableView.swift; sourceTree = "<group>"; };
 		4FEA2C112BF55F82000B5ABF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		4FFEDD542BFAC9C0004F092A /* ClimateBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClimateBottomSheetView.swift; sourceTree = "<group>"; };
+		4FFEDD562BFACA4C004F092A /* ChargerMarker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargerMarker.swift; sourceTree = "<group>"; };
+		4FFEDD582BFACA79004F092A /* RoundedTriangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedTriangle.swift; sourceTree = "<group>"; };
+		4FFEDD5A2BFACA9C004F092A /* TriangleSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleSlider.swift; sourceTree = "<group>"; };
+		4FFEDD5C2BFACB00004F092A /* TriangleSliderThumbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleSliderThumbView.swift; sourceTree = "<group>"; };
+		4FFEDD612BFACDFB004F092A /* PlaceholderPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceholderPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +114,8 @@
 				4F85C7B22BF35599004A7287 /* UnlockView.swift */,
 				4F85C7A62BF2A94B004A7287 /* MainView.swift */,
 				4F9161A32BF6542200E74C3A /* TeslaTabView.swift */,
-				4F9161B02BF6CD8B00E74C3A /* ChargeView.swift */,
+				4FFEDD612BFACDFB004F092A /* PlaceholderPage.swift */,
+				4FA6EDA22BF8F5B100089332 /* ChargeModule */,
 				4FE7CE892BF3EA7800A74D93 /* ClimateSettingsModule */,
 				4F9161A92BF6CA5100E74C3A /* TeslaTabBarFiles */,
 				4F85C7B82BF37A01004A7287 /* Sources */,
@@ -114,7 +135,6 @@
 		4F85C7B82BF37A01004A7287 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				4F9161A12BF63EAD00E74C3A /* TeslaLogoShape.swift */,
 				4FEA2C0F2BF55494000B5ABF /* ReusableViews */,
 				4FEA2C102BF554A6000B5ABF /* Extensions */,
 				4F85C7B62BF37994004A7287 /* ViewModifiers.swift */,
@@ -135,11 +155,22 @@
 			path = TeslaTabBarFiles;
 			sourceTree = "<group>";
 		};
+		4FA6EDA22BF8F5B100089332 /* ChargeModule */ = {
+			isa = PBXGroup;
+			children = (
+				4F9161B02BF6CD8B00E74C3A /* ChargeView.swift */,
+				4FA6EDA02BF8F5A800089332 /* ChargeViewModel.swift */,
+				4FA6EDA32BFA969300089332 /* ChargeModel.swift */,
+			);
+			path = ChargeModule;
+			sourceTree = "<group>";
+		};
 		4FE7CE892BF3EA7800A74D93 /* ClimateSettingsModule */ = {
 			isa = PBXGroup;
 			children = (
 				4FE7CE872BF3BAFA00A74D93 /* ClimateSettingsView.swift */,
 				4FE7CE8A2BF3EA9300A74D93 /* ClimateSettingsViewModel.swift */,
+				4FFEDD542BFAC9C0004F092A /* ClimateBottomSheetView.swift */,
 			);
 			path = ClimateSettingsModule;
 			sourceTree = "<group>";
@@ -147,10 +178,13 @@
 		4FEA2C0F2BF55494000B5ABF /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
-				4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */,
-				4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */,
-				4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */,
 				4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */,
+				4FFEDD602BFACB5D004F092A /* ClimateSlider */,
+				4FFEDD5F2BFACB48004F092A /* ChargeSlider */,
+				4FFEDD5E2BFACB2F004F092A /* ChargerPin */,
+				4F9161A12BF63EAD00E74C3A /* TeslaLogoShape.swift */,
+				4FA6EDA52BFAA3A900089332 /* BatteryShape.swift */,
+				4FEA2C0B2BF416C0000B5ABF /* CircleProgressView.swift */,
 			);
 			path = ReusableViews;
 			sourceTree = "<group>";
@@ -162,6 +196,34 @@
 				4F85C7B92BF38CDE004A7287 /* Extension+LinearGradient.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4FFEDD5E2BFACB2F004F092A /* ChargerPin */ = {
+			isa = PBXGroup;
+			children = (
+				4FA6EDA72BFAAB2300089332 /* ChargerPinView.swift */,
+				4FFEDD562BFACA4C004F092A /* ChargerMarker.swift */,
+			);
+			path = ChargerPin;
+			sourceTree = "<group>";
+		};
+		4FFEDD5F2BFACB48004F092A /* ChargeSlider */ = {
+			isa = PBXGroup;
+			children = (
+				4FFEDD5C2BFACB00004F092A /* TriangleSliderThumbView.swift */,
+				4FFEDD5A2BFACA9C004F092A /* TriangleSlider.swift */,
+				4FFEDD582BFACA79004F092A /* RoundedTriangle.swift */,
+			);
+			path = ChargeSlider;
+			sourceTree = "<group>";
+		};
+		4FFEDD602BFACB5D004F092A /* ClimateSlider */ = {
+			isa = PBXGroup;
+			children = (
+				4FE7CE8C2BF3FA3A00A74D93 /* SliderThumbView.swift */,
+				4FE7CE8E2BF4019700A74D93 /* DarkSlider.swift */,
+			);
+			path = ClimateSlider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,16 +296,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4FFEDD572BFACA4C004F092A /* ChargerMarker.swift in Sources */,
 				4F9161A82BF6CA2F00E74C3A /* TeslaTabBarPreferenceKey.swift in Sources */,
 				4F9161B12BF6CD8B00E74C3A /* ChargeView.swift in Sources */,
 				4FEA2C0E2BF43D0D000B5ABF /* BottomSheetReusableView.swift in Sources */,
+				4FA6EDA42BFA969300089332 /* ChargeModel.swift in Sources */,
 				4F85C7B72BF37994004A7287 /* ViewModifiers.swift in Sources */,
 				4F85C7A72BF2A94B004A7287 /* MainView.swift in Sources */,
 				4FEA2C0C2BF416C0000B5ABF /* CircleProgressView.swift in Sources */,
 				4F9161A22BF63EAD00E74C3A /* TeslaLogoShape.swift in Sources */,
 				4F85C7A52BF2A94B004A7287 /* TeslaAppApp.swift in Sources */,
+				4FFEDD5B2BFACA9C004F092A /* TriangleSlider.swift in Sources */,
+				4FA6EDA62BFAA3A900089332 /* BatteryShape.swift in Sources */,
 				4F85C7B52BF378B4004A7287 /* Extension+View.swift in Sources */,
+				4FA6EDA82BFAAB2300089332 /* ChargerPinView.swift in Sources */,
 				4F9161A62BF6973100E74C3A /* TeslaTabBarShape.swift in Sources */,
+				4FFEDD552BFAC9C0004F092A /* ClimateBottomSheetView.swift in Sources */,
+				4FFEDD592BFACA79004F092A /* RoundedTriangle.swift in Sources */,
+				4FA6EDA12BF8F5A800089332 /* ChargeViewModel.swift in Sources */,
+				4FFEDD5D2BFACB00004F092A /* TriangleSliderThumbView.swift in Sources */,
 				4F9161AF2BF6CB0300E74C3A /* TeslaTabBar.swift in Sources */,
 				4F85C7BA2BF38CDE004A7287 /* Extension+LinearGradient.swift in Sources */,
 				4F9161A42BF6542200E74C3A /* TeslaTabView.swift in Sources */,
@@ -254,6 +325,7 @@
 				4FE7CE8F2BF4019700A74D93 /* DarkSlider.swift in Sources */,
 				4F85C7B32BF35599004A7287 /* UnlockView.swift in Sources */,
 				4FE7CE8D2BF3FA3A00A74D93 /* SliderThumbView.swift in Sources */,
+				4FFEDD622BFACDFB004F092A /* PlaceholderPage.swift in Sources */,
 				4FE7CE882BF3BAFA00A74D93 /* ClimateSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,7 +385,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -370,7 +442,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -395,6 +467,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -423,6 +496,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

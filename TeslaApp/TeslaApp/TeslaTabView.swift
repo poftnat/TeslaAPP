@@ -31,13 +31,13 @@ struct TeslaTabView: View {
                 }
                 .opacity(selectedItem == 1 ? 1 : 0)
             
-            Color.yellow
+            PlaceholderPage()
                 .teslaTabItem {
                     TabItem(icon: Constants.mappinIcon)
                 }
                 .opacity(selectedItem == 2 ? 1 : 0)
             
-            Color.yellow
+            PlaceholderPage()
                 .teslaTabItem {
                     TabItem(icon: Constants.accountIcon)
                 }

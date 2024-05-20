@@ -21,14 +21,14 @@ struct TeslaTabBar<Content: View>: View {
             .background(
                 ZStack {
                     TeslaTabBarShape()
-                        .fill(.darkShadow)
+                        .fill(.darkShadow.opacity(0.8))
                     TeslaTabBarShape()
                         .stroke(style: .init(lineWidth: 1))
                         .fill(.lightShadow)
                         .blur(radius: 1)
                 }
-                    .offset(y: 1)
             )
+            .offset(y: 5)
             .ignoresSafeArea(edges: .bottom)
             .shadow(radius: 8)
             .shadow(radius: 16)

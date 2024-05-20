@@ -12,7 +12,6 @@ struct UnlockView: View {
     @State var isCarClosed = true
     
     var body: some View {
-        NavigationView {
             backgroundStackView {
                 ZStack {
                     foregroundGradient
@@ -40,12 +39,12 @@ struct UnlockView: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
             }
-        }
+            .navigationBarBackButtonHidden()
     }
     
     private var lockCarView: some View {
             Button {
-                withAnimation() {
+                withAnimation(.spring(duration: 1)) {
                     isCarClosed.toggle()
                 }
             } label: {

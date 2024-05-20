@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Слайдер для экрана настройки климат-системы
 struct DarkSlider: View {
     @Binding var value: Double
     @Binding var color: Color

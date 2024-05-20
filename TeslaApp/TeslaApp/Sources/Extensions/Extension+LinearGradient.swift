@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+/// Добавляет акцентный градиент от светло-зеленого к светло-голубому
 extension LinearGradient {
+    
+    /// Акцентный градиент от светло-зеленого к светло-голубому
     static var accentGradient = LinearGradient(colors: [.gradientTop, .gradientBottom], startPoint: .top, endPoint: .bottom)
 }

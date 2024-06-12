@@ -9,8 +9,20 @@ import SwiftUI
 
 struct UnlockView: View {
     
-    @State var isCarClosed = true
-    
+    private enum Constants {
+        static let unlockText = "Unlock"
+        static let lockText = "Lock"
+        static let lockImageName = "lock.fill"
+        static let unlockImageName = "lock.open.fill"
+        static let hiText = "Hi"
+        static let verdanaFontName = "Verdana"
+        static let welcomeText = "Welcome back"
+        static let verdanaBoldFontName = "Verdana-Bold"
+        static let unlockedCarImageName = "unlocked car"
+        static let lockedCarImageName = "locked car"
+        static let settingsImageName = "gearshape"
+    }
+        
     var body: some View {
             backgroundStackView {
                 ZStack {
@@ -33,7 +45,7 @@ struct UnlockView: View {
                             }
                         }
                         Spacer()
-                        lockCarView
+                        CarLockerView(isCarClosed: $isCarClosed)
                             .padding(.bottom, 30)
                     }
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -42,57 +54,16 @@ struct UnlockView: View {
             .navigationBarBackButtonHidden()
     }
     
-    private var lockCarView: some View {
-            Button {
-                withAnimation(.spring(duration: 1)) {
-                    isCarClosed.toggle()
-                }
-            } label: {
-                HStack {
-                    Text(isCarClosed ? "Unlock" : "Lock")
-                        .padding(.leading, 10)
-                        .foregroundStyle(.white)
-                    Spacer()
-                    Image(systemName: isCarClosed ? "lock.fill" : "lock.open.fill")
-                        .foregroundStyle(LinearGradient.accentGradient)
-                        .font(.system(size: 20))
-                        .foregroundStyle(.icon)
-                        .padding(.all, 12)
-                        .background(
-                            ZStack {
-                                buttonBackgroundView
-                            }
-                        )
-                .clipShape(Circle())
-                .frame(width: 30, height: 30)
-                .padding(.trailing, 10)
-                .neumorfismNonSelectedStyle()
-                }
-                .frame(width: 160, height: 55)
-                .padding(.all, 10)
-                .background(
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 40)
-                            .fill(LinearGradient(colors: [.darkShadow.opacity(0.45), .lightShadow.opacity(0.3)], startPoint: .top, endPoint: .bottom))
-                        RoundedRectangle(cornerRadius: 40)
-                            .stroke(LinearGradient(colors: [.darkShadow.opacity(0.45), .lightShadow.opacity(0.1)], startPoint: .top, endPoint: .bottomTrailing), lineWidth: 15)
-                            .blur(radius: 6)
-                            .clipShape(RoundedRectangle(cornerRadius: 60))
-                    }
-
-                )
-            }
-            .frame(width: 300)
-    }
+    @State private var isCarClosed = true
     
     private var welcomeTitleView: some View {
         VStack {
-            Text("Hi")
-                .font(.custom("Verdana", size: 20))
+            Text(Constants.hiText)
+                .font(.custom(Constants.verdanaFontName, size: 20))
                 .foregroundStyle(.labelSecondary)
             Spacer().frame(height: 20)
-            Text("Welcome back")
-                .font(.custom("Verdana-Bold", size: 36))
+            Text(Constants.welcomeText)
+                .font(.custom(Constants.verdanaBoldFontName, size: 36))
                 .foregroundStyle(.white)
         }
         .padding()
@@ -100,7 +71,7 @@ struct UnlockView: View {
     
     private var carImageView: some View {
         ZStack {
-            Image("unlocked car")
+            Image(Constants.unlockedCarImageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .offset(x: 5)
@@ -110,7 +81,7 @@ struct UnlockView: View {
                         .blur(radius: 20)
                         .opacity(isCarClosed ? 0 : 1)
                 )
-            Image("locked car")
+            Image(Constants.lockedCarImageName)
                 .resizable()
                 .frame(width: 320, height: 240)
                 .offset(y: -35)
@@ -119,25 +90,8 @@ struct UnlockView: View {
         }
     }
     
-    private var buttonBackgroundView: some View {
-        ZStack {
-            RadialGradient(colors: [.lightShadow, .darkShadow.opacity(0.45)], center: .topLeading, startRadius: 0, endRadius: 80)
-            Circle()
-                .fill(LinearGradient(colors: [.lightShadow, .darkShadow.opacity(0.45)], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .padding(2)
-                .blur(radius: 8)
-            Circle()
-                .stroke(style: StrokeStyle(lineWidth: 4))
-                .fill(LinearGradient(colors: [.darkShadow.opacity(0.45), .lightShadow], startPoint: .top, endPoint: .bottomTrailing))
-                .blur(radius: 1)
-            Circle()
-                .stroke(style: StrokeStyle(lineWidth: 1))
-                .fill(.darkShadow)
-        }
-    }
-    
     private var settingsButton: some View {
-        Image(systemName: "gearshape")
+        Image(systemName: Constants.settingsImageName)
             .regularCircleBackground()
             .padding(.top, 10)
             .padding(.horizontal, 20)

@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+
+/// Возвращает выпуклый вью
 struct NonselectedShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -15,6 +17,8 @@ struct NonselectedShadowModifier: ViewModifier {
     }
 }
 
+
+/// Возвращает вогнутый вью
 struct SelectedShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -23,6 +27,7 @@ struct SelectedShadowModifier: ViewModifier {
     }
 }
 
+/// Возвращает круглый вью
 struct CircleShadowModifier: ViewModifier {
     func body(content: Content) -> some View {
         content
@@ -32,7 +37,7 @@ struct CircleShadowModifier: ViewModifier {
     }
 }
 
-/// Возвращает круглый вью под кнопку
+/// Возвращает круглый вью под стандартную выпуклую кнопку с желобом
 struct CircleButtonModifier: ViewModifier {
     func body(content: Content) -> some View {
         content

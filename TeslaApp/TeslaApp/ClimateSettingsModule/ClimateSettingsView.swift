@@ -19,6 +19,12 @@ struct ClimateSettingsView: View {
         static let climateDisclosureIconName = "fanblades"
         static let celsiumPostfixText = "˚ C"
         static let degreesFormatRule = "%2.f"
+        static let alertTitle = "Any questions?"
+        static let alertMessage = "Contact support team via"
+        static let supportLinkText = "https://www.tesla.com/support"
+        static let supportTitle = "Tesla Support"
+        static let logoImageName = "logo"
+        static let okText = "Ok"
     }
     var body: some View {
         backgroundStackView {
@@ -158,13 +164,13 @@ struct ClimateSettingsView: View {
             RoundedRectangle(cornerRadius: 24)
                 .fill(Color.darkShadow.opacity(0.8))
             VStack(spacing: 10) {
-                Text("Any questions?")
-                Text("Contact support team via")
-                Link(destination: URL(string: "https://www.tesla.com/support")!, label: {
+                Text(Constants.alertTitle)
+                Text(Constants.alertMessage)
+                Link(destination: URL(string: Constants.supportLinkText)!, label: {
                     Label {
-                        Text("Tesla Support")
+                        Text(Constants.supportTitle)
                     } icon: {
-                        Image("logo")
+                        Image(Constants.logoImageName)
                             .resizable()
                             .frame(width: 20, height: 30)
                     }
@@ -172,7 +178,7 @@ struct ClimateSettingsView: View {
                 Button {
                     isAlertButtonTapped = false
                 } label: {
-                    Text("Ok")
+                    Text(Constants.okText)
                 }
 
             }

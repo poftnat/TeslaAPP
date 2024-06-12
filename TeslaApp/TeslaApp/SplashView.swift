@@ -7,13 +7,8 @@
 
 import SwiftUI
 
+/// Сплэш-скрин с логотипом
 struct SplashView: View {
-    
-    @State private var isAnimationStarted = false
-    @State private var isAnimationLoopFinished = false
-    @State private var isAnimationFinished = false
-    @State private var isTransitionAllowed = false
-    @State private var offset = 0.0
     
     var body: some View {
         NavigationView {
@@ -39,6 +34,11 @@ struct SplashView: View {
         }
         .navigationBarBackButtonHidden()
     }
+    
+    @State private var isAnimationStarted = false
+    @State private var isAnimationLoopFinished = false
+    @State private var isAnimationFinished = false
+    @State private var isTransitionAllowed = false
     
     private var logoView: some View {
         TeslaLogoShape()
@@ -96,8 +96,4 @@ struct SplashView: View {
             }
         }
     }
-}
-
-#Preview {
-    SplashView()
 }

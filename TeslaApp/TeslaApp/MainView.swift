@@ -9,8 +9,18 @@ import SwiftUI
 
 struct MainView: View {
     
-    @State var isCarClosed = false
-    @State var tagSelected = 0
+    private enum Constants {
+        static let personImageName = "person.fill"
+        static let teslaText = "Tesla"
+        static let mileageText = "189 km"
+        static let batteryText = "battery.75percent"
+        static let closedMainImage = "closeCar"
+        static let openMainImage = "car"
+        static let unlockText = "Unlock"
+        static let lockText = "Lock"
+        static let unlockImageName = "lock.open.fill"
+        static let lockImageName = "lock.fill"
+    }
     
     var body: some View {
         backgroundStackView {
@@ -18,7 +28,7 @@ struct MainView: View {
                 HStack {
                     headerView
                     NavigationLink(destination: UnlockView()) {
-                        Image(systemName: "person.fill")
+                        Image(systemName: Constants.personImageName)
                             .regularCircleBackground()
                             .neumorfismNonSelectedStyle()
                         .padding(.trailing, 20)
@@ -28,7 +38,7 @@ struct MainView: View {
                 controlPanelView
                 Spacer()
                 if tagSelected == 1 {
-                    lockCarView
+                    CarLockerView(isCarClosed: $isCarClosed)
                 }
                 Spacer()
             }
@@ -36,7 +46,10 @@ struct MainView: View {
         .navigationBarBackButtonHidden()
     }
     
-    var controlPanelView: some View {
+    @State private var isCarClosed = false
+    @State private var tagSelected = 0
+    
+    private var controlPanelView: some View {
         HStack(spacing: 30) {
             ForEach(1..<5) { index in
                 Button(action: {
@@ -68,6 +81,38 @@ struct MainView: View {
         .neumorfismNonSelectedStyle()
     }
     
+    private var headerView: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                Text(Constants.teslaText)
+                    .font(.system(size: 28))
+                    .fontWeight(.bold)
+                    .foregroundStyle(.textcolor)
+                Label {
+                    Text(Constants.mileageText)
+                        .font(.system(size: 16))
+                        .fontWeight(.semibold)
+                        .opacity(0.4)
+                } icon: {
+                    Image(systemName: Constants.batteryText)
+                        .foregroundStyle(.gray)
+                }
+            }
+            Spacer()
+        }
+        .padding(.all, 25)
+    }
+    
+    private var carView: some View {
+        Image(isCarClosed ? Constants.closedMainImage : Constants.openMainImage)
+            .resizable()
+            .aspectRatio(contentMode: .fit)
+            .frame(height: 150)
+            .padding(.horizontal)
+            .padding(.bottom, 40)
+            .shadow(color: .textcolor.opacity(0.5), radius: 15, x: 10, y: 10)
+    }
+    
     private func createPanelButton(index: Int, tagSelected: Binding<Int>) -> some View {
         Image("\(index)")
             .resizable()
@@ -80,62 +125,7 @@ struct MainView: View {
             )
     }
     
-    var headerView: some View {
-        HStack {
-            VStack(alignment: .leading, spacing: 8) {
-            Text("Tesla")
-                    .font(.system(size: 28))
-                    .fontWeight(.bold)
-                    .foregroundStyle(.textcolor)
-                Label {
-                    Text("189 km")
-                        .font(.system(size: 16))
-                        .fontWeight(.semibold)
-                        .opacity(0.4)
-                } icon: {
-                    Image(systemName: "battery.75percent")
-                        .foregroundStyle(.gray)
-                }
-            }
-            Spacer()
-        }
-        .padding(.all, 25)
-    }
-    
-    var carView: some View {
-        Image(isCarClosed ? "closeCar" : "car")
-            .resizable()
-            .aspectRatio(contentMode: .fit)
-            .frame(height: 150)
-            .padding(.horizontal)
-            .padding(.bottom, 40)
-            .shadow(color: .textcolor.opacity(0.5), radius: 15, x: 10, y: 10)
-    }
-    
-    private var lockCarView: some View {
-        Button {
-            withAnimation() {
-                isCarClosed.toggle()
-            }
-        } label: {
-            HStack {
-                Label {
-                    Text(isCarClosed ? "Unlock" : "Lock")
-                } icon: {
-                    Image(systemName: isCarClosed ? "lock.open.fill" : "lock.fill")
-                        .renderingMode(.template)
-                        .neumorfismCircleStyle()
-                }
-
-            }
-            .padding()
-            .background(RoundedRectangle(cornerRadius: 50).fill(.basic))
-            .neumorfismSelectedStyle()
-        }
-        .frame(width: 300)
-    }
-    
-    func backgroundStackView<Content: View>(content: () -> Content ) -> some View {
+    private func backgroundStackView<Content: View>(content: () -> Content) -> some View {
         ZStack {
             Rectangle()
                 .fill(

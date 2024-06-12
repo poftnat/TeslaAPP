@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Заглушка для несозданных экранов
 struct PlaceholderPage: View {
     
     private enum Constants {

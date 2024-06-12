@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F26A4082C1A26DF00568192 /* CarLockerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F26A4072C1A26DF00568192 /* CarLockerView.swift */; };
 		4F85C7A52BF2A94B004A7287 /* TeslaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7A42BF2A94B004A7287 /* TeslaAppApp.swift */; };
 		4F85C7A72BF2A94B004A7287 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F85C7A62BF2A94B004A7287 /* MainView.swift */; };
 		4F85C7A92BF2A94E004A7287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F85C7A82BF2A94E004A7287 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4F26A4072C1A26DF00568192 /* CarLockerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarLockerView.swift; sourceTree = "<group>"; };
 		4F85C7A12BF2A94B004A7287 /* TeslaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeslaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F85C7A42BF2A94B004A7287 /* TeslaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeslaAppApp.swift; sourceTree = "<group>"; };
 		4F85C7A62BF2A94B004A7287 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		4FEA2C0F2BF55494000B5ABF /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				4F26A4072C1A26DF00568192 /* CarLockerView.swift */,
 				4FEA2C0D2BF43D0D000B5ABF /* BottomSheetReusableView.swift */,
 				4FFEDD602BFACB5D004F092A /* ClimateSlider */,
 				4FFEDD5F2BFACB48004F092A /* ChargeSlider */,
@@ -327,6 +330,7 @@
 				4FE7CE8D2BF3FA3A00A74D93 /* SliderThumbView.swift in Sources */,
 				4FFEDD622BFACDFB004F092A /* PlaceholderPage.swift in Sources */,
 				4FE7CE882BF3BAFA00A74D93 /* ClimateSettingsView.swift in Sources */,
+				4F26A4082C1A26DF00568192 /* CarLockerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
